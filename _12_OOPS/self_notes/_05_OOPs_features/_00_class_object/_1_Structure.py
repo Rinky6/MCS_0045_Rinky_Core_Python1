@@ -1,4 +1,4 @@
-str1 = "Madhu"  # str("Madhu")
+str1 = "Rinky"
 
 '''
 Student
@@ -81,7 +81,6 @@ Ex : class is an example for encapsulation
      object is also an example
 
 
-madhu = Employee1(100,"MadhuN",15000)
 
 2. Abstraction :
 ---------------
@@ -155,7 +154,7 @@ print("Employee.__bases__:", Employee.__bases__)
 
 # CRUD - Create Retrieve Update Delete
 
-madhu = Employee(100, "Madhu N", 10000)  # CREATE
+rinky = Employee(100, "Rinky", 10000)  # CREATE
 
 '''
 setattr : To set IV value inside object  # UPDATE
@@ -164,21 +163,21 @@ hasattr : To check IV has specific value # RETRIEVE
 delattr : To delete IV                   # DELETE   
 '''
 # getter - RETRIEVE
-print("Madhu name :", getattr(madhu, "name"))
-print("Madhu eid  :", getattr(madhu, "eid"))
-# print("Madhu addr  :", getattr(madhu, "addr"))
+print("Rinky name :", getattr(rinky, "name"))
+print("Rinky eid  :", getattr(rinky, "eid"))
+# print("Madhu addr  :", getattr("RINKY", "addr"))
 
 # setter - U    PDATE
-print("Setting name :", setattr(madhu, "name", "MAD"))
-print("Setting eid  :", setattr(madhu, "eid", 200))
-print("Setting addr :", setattr(madhu, "address", 'Bangalore'))
+print("Setting name :", setattr(rinky, "name", "MAD"))
+print("Setting eid  :", setattr(rinky, "eid", 200))
+print("Setting addr :", setattr(rinky, "address", 'Bangalore'))
 
-print("Get name:", getattr(madhu, "name"))
-print("Get eid :", getattr(madhu, "eid"))
-print("Get addr:", getattr(madhu, "address"))
+print("Get name:", getattr(rinky, "name"))
+print("Get eid :", getattr(rinky, "eid"))
+print("Get addr:", getattr(rinky, "address"))
 
-print("Has attr sal :", hasattr(madhu, "sal"))
-print("Has attr addr:", hasattr(madhu, "address"))
+print("Has attr sal :", hasattr(rinky, "sal"))
+print("Has attr addr:", hasattr(rinky, "address"))
 
-print("Delete attr :", delattr(madhu, "sal"))
-print(getattr(madhu, "sal"))
+print("Delete attr :", delattr(rinky, "sal"))
+print(getattr(rinky, "sal"))

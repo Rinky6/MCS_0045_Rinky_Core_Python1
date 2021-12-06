@@ -6,10 +6,9 @@ class Calculator:
      print("Start  calculating")
 class Cal(Calculator):
     def __init__(self):
-     print("First child class")
-    def operations(self,
-                   ):
-     def operation(self,a,b):  # method overloading
+      print("First child class")
+
+    def operation(self,a,b):  # method overloading
       c=a+b
       print("Addition of two no", c)
 

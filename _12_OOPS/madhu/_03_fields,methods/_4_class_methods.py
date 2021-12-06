@@ -12,7 +12,7 @@ class Class:
         # ==> Methods which represents implementation
 
        1. Class Method
-       2. Instance Method
+       2. Instance Method vc1
        3. Static method
 '''
 

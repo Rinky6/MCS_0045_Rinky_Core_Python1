@@ -8,7 +8,8 @@ class Mobile:
 
     # 2. BEHAVIOR
     def get_info(self):
-        print("Mobile details are ", self.brand_name, self.m_name, self.m_price)
+       print("Mobile details are ", self.brand_name, self.m_name, self.m_price)
 
 m_details = Mobile("Realme", 'Realme GT', 25000)
+print(m_details)
 m_details.get_info()
