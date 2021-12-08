@@ -30,7 +30,7 @@ lg=0
 for ele in message:
  if ele.isalpha():
      lg+=1
-print("Length of given string : ", lg)
+print("total character of given string : ", lg)
 
 
 # 2. Algorithm  80%

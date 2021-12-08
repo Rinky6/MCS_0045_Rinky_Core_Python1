@@ -34,7 +34,7 @@ swap=lst + str[1:-1]+frst
 print("Length of given string : ", swap)
 
 
-
+'''
 
 
 # 2. Algorithm  80%
@@ -78,19 +78,22 @@ print("Lenth of string  " ,length)
 
 
 # 4 OOPS              ==> 30 programs
+'''
 print("--------4 Object Oriented----------")
-class Leg_String:
-    def __init__(self,legstr):
-     self.legstr=legstr
-    def leg_of_string(self):
-     self.legstr=0
-     for i in leg:
-         self.legstr+=1
-     print("Length of string  " , self.legstr)
+class Swap_String:
+    def __init__(self,wstr):
+     self.wstr=wstr
+    def swap_of_string(self):
+        frst = self.wstr[0]
+        print(frst)
+        lst = self.wstr[-1]
+        print(lst)
+        swap = lst + str[1:-1] + frst
+        print("After swapping string : ", swap)
 
-leg=input("Enter  string   ")
-length=Leg_String(leg)
-length.leg_of_string()
+stnce=input("Enter  string   ")
+obj=Swap_String(stnce)
+obj.swap_of_string()
 
 
 
