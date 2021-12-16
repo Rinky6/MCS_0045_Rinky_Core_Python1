@@ -7,7 +7,7 @@ class Human(ABC):
 
   # @abstractmethod
   #  def sleeping(self):          Can't instantiate abstract class Student with abstract method sleeping
-     #   pass
+ #   pass
 
 class Employee(Human):
     def sal(self):

@@ -29,7 +29,7 @@ with open("text.txt", "w") as file:
     print(data)
    
 
-   ''' for line in data:
+''' for line in data:
         word = line.split()
     print (word)
 '''

@@ -1,5 +1,47 @@
 # https://www.programiz.com/python-programming/iterator
 
+
+
+lst = [9,2,3,4,5]
+itr = iter(lst)
+print("After 1st  iteration : " , next(itr))    #9
+print("After 2nd  iteration : " , next(itr))    #2
+print("After 3rd  iteration : " , next(itr))    #3
+print("After 4th  iteration : " , next(itr))    #4
+print("After 5th  iteration : " , next(itr))    #5
+#print("After 6th  iteration : " , next(itr))    #StopIteration
+
+
+
+
+# create an iterator object from that iterable
+iter_obj = iter([1,2,4,6,8])
+print("iteration : " , iter_obj)  #<list_iterator object at 0x000001F2BCBA3F70>
+
+# infinite loop
+while True:
+    try:
+        # get the next item
+        element = next(iter_obj)
+        print("After iteration using EH " , element)
+    except StopIteration:
+        # if StopIteration is raised, break from loop
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 li = list()   # list([])
 print("Empty list : ", li)
