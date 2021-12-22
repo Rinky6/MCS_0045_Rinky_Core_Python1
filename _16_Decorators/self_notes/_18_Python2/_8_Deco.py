@@ -122,8 +122,6 @@ def decorator(fun):
 @decorator
 def func():
     print('this is the main function')
-
-
 func()
 
 
@@ -135,7 +133,7 @@ def decorator(fun):
 
     return inner
 
-
+decorator ----decorator()
 def func():
     print('this is the main function')
 

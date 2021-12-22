@@ -5,7 +5,7 @@ print("---------------2. NESTED FUNCTIONS------------------")
 def outer_func():
     def inner_func():
         print("Hello, World!")
-    inner_func()
+    return inner_func
     print("Ssssssssss")
 outer_func()
 
