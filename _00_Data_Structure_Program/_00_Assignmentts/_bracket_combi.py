@@ -48,7 +48,7 @@ def printBracket(ob, cb, n, s = []):
         printBracket(ob+1, cb, n, s)
         s.pop()
         return
-n=int(input("Enter no"))
+n=int(input("Enter no : "))
 printBracket(0, 0, n)
 
 print("All combinations are : ", lst)

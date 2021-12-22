@@ -6,7 +6,7 @@ def myFun(**kwargs):
         print("%s == %s" % (key, value))
 
 myFun()
-myFun(first='Geeks', mid='for', last='Geeks')  # dictionary
+myFun(first='this', mid='for', last='you')  # dictionary
 
 print("---------Program 2 --------------")
 def myFun(val, **kwargs):
@@ -17,7 +17,7 @@ def myFun(val, **kwargs):
 
 # myFun() # Error
 myFun(10)
-myFun("Hi", first='Geeks', mid='for', last='Geeks')
+myFun("Hi", first='rinky', mid='for', last='you')
 
 print("----Program 3---------")
 def myFun(arg1, arg2, arg3):
@@ -25,10 +25,10 @@ def myFun(arg1, arg2, arg3):
     print("arg2:", arg2)
     print("arg3:", arg3)
 
-myFun("Geeks", "for", "Geeks")
+myFun("Rinky", "for", "you")
 
-args = ("Geeks", "for", "Geeks")
-myFun(*args)  #myFun("Geeks", "for", "Geeks") Packing unpacking
+args = ("Rinky", "for", "You")
+myFun(*args)  #myFun("Rinky", "for", "you") Packing unpacking
 
 kwargs = {"arg1": "Geeks", "arg2": "for", "arg3": "Geeks"}
 myFun(**kwargs)

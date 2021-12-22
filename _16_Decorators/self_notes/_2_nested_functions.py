@@ -1,6 +1,98 @@
 # 2. NESTED FUNCTIONS :
 print("---------------2. NESTED FUNCTIONS------------------")
 
+
+def outer_func():
+    def inner_func():
+        print("Hello, World!")
+    inner_func()
+    print("Ssssssssss")
+outer_func()
+
+
+def parent(rcv):
+    def child():
+        print("hello", rcv)
+    child()
+
+parent("world")
+
+
+
+
+
+
+
+def parent():
+    print("Im parent class")
+    def child():
+        print("My child func")
+    child()
+    print(child) #<function parent.<locals>.child at 0x0000013A68E62320>
+parent()
+
+
+
+def operation(number):
+    print("Im parent function")
+    def inner_operation():
+        sum1 = number ** 3
+        print("sum of given no" , sum1)   #sum of given no 1000
+    inner_operation()
+print(operation(10))   #None
+
+
+def pallindrom(s):
+
+    def constr():
+        wd = input("Enter the any word")
+        afrcnct = s + wd
+        print(afrcnct)
+        return afrcnct
+    rst = constr()
+    print("befor reverse : ",rst)
+    rev = ''.join(reversed(rst))
+    print("after reverse : " ,rev)
+    if(rst == rev):
+        print("given string is pallindrom")
+    else:
+        print("Given string not pallindrom")
+
+wrd = input("Enter any word")
+
+pallindrom(wrd)
+
+
+
+
+rst1=""
+def pallindrom(s):
+
+    def constr():
+        wd = input("Enter the any word")
+        afrcnct = s + wd
+        print(afrcnct)
+        return afrcnct
+    rst = constr()
+    print("before reverse : ", rst)
+    rst1 == rst[::-1]
+    print("after reverse : ", rst)
+    if(rst == rst1):
+        print("given string is pallindrom")
+    else:
+        print("Given string not pallindrom")
+
+wrd = input("Enter any word")
+
+pallindrom(wrd)
+
+
+
+
+
+
+
+'''
 def parent():
     print("Before Nested Function")
 
@@ -41,6 +133,4 @@ except AttributeError as err:
     print("Exception :: ", err)
     print("--You cannot call nested function directly------")
 
-print("---------------------------------------------------")
-
-
+'''

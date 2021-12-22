@@ -1,6 +1,6 @@
 # 3. RETURNING FUNCTIONS
 print("---------------3. RETURNING NESTED FUNCTION NAME------------------")
-
+'''
 def parent(num):
 
     def first_child():
@@ -13,7 +13,7 @@ def parent(num):
         return first_child
     else:
         return second_child
-    '''
+    
     try:
         assert num == 10
         print("Assertion is True.Continue to execute the remaining code")
@@ -23,7 +23,7 @@ def parent(num):
     finally:
         print("Finally executed")
     '''
-
+'''
 f_c = parent(10)
 
 print("*************")
@@ -56,3 +56,4 @@ print("Printing child1  function : ", x)
 # print("Calling child2 function : ", x())
 print("Calling child3 function : ", parent1())
 # print("Calling child4 function : ", parent1()())
+'''
