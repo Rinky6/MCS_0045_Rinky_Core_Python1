@@ -46,19 +46,19 @@ def pallindrom(s):
 
     def constr():
         wd = input("Enter the any word")
-        afrcnct = s + wd
+        afrcnct = s+wd
         print(afrcnct)
         return afrcnct
     rst = constr()
     print("befor reverse : ",rst)
     rev = ''.join(reversed(rst))
-    print("after reverse : " ,rev)
+    print("after reverse : ",rev)
     if(rst == rev):
-        print("given string is pallindrom")
+        print("given string is  pallindrom")
     else:
-        print("Given string not pallindrom")
+        print("Given string is not pallindrom")
 
-wrd = input("Enter any word")
+wrd = input("Enter any word : ")
 
 pallindrom(wrd)
 
@@ -70,13 +70,14 @@ def pallindrom(s):
 
     def constr():
         wd = input("Enter the any word")
-        afrcnct = s + wd
+        afrcnct = s+wd
         print(afrcnct)
         return afrcnct
     rst = constr()
-    print("before reverse : ", rst)
-    rst1 == rst[::-1]
-    print("after reverse : ", rst)
+    print("before reverse : ",rst)
+    #print("rvrs : ", rst[::-1])
+    rst1 = rst[::-1]
+    print("after reverse : ",rst1)
     if(rst == rst1):
         print("given string is pallindrom")
     else:
@@ -85,6 +86,13 @@ def pallindrom(s):
 wrd = input("Enter any word")
 
 pallindrom(wrd)
+
+
+
+
+
+
+
 
 
 

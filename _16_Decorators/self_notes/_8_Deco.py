@@ -106,7 +106,78 @@ when it dont' have a return statement, it gives the result None. FOR FUNCTIONS T
 
 '''
 
+'''
+Decorators----->
+Decorator is way to dynamically add some new behavior to some objects. We achieve the same
+in Python by using closures.
 
+In the example we will create a simple example which will print some statement before and 
+after the execution of a function.
+'''
+def fuc():
+    pass
+
+fuc1 = fuc
+
+del fuc
+print(fuc1)   #<function fuc at 0x000001DF958B24D0>
+
+
+
+def rtnfun(func):
+    return func("Hello")
+
+rtnfun(print)  #Hello
+
+
+def execution(fun):
+    def execution1():
+        print("Execution going on....")
+        fun()
+        print("After func() execution")
+    return execution1
+def execu():
+    print("main execution")
+execu= execution(execu)
+execu()
+
+
+
+
+
+
+
+
+
+
+
+def my_decorator(func):
+   def wrapper(*args, **kwargs):
+     print("Before call")
+     result = func(*args, **kwargs)
+     print("After call", result)
+     return result
+   return wrapper
+@my_decorator
+def add(a, b):
+ "Our add function"
+ return a + b
+add(2,3)
+
+
+
+
+def debug(func):
+    def _debug(*args, **kwargs):
+        result = func(*args, **kwargs)
+        print(f'{func.__name__}(args: {args}, kwargs: {kwargs}) -> {result}')
+        return result
+    return _debug
+@debug
+def add(a, b):
+    return a + b
+add(5, 6)
+#add(args: (5, 6), kwargs: {}) -> 11
 
 
 
@@ -133,7 +204,7 @@ def decorator(fun):
 
     return inner
 
-decorator ----decorator()
+#decorator ----decorator()
 def func():
     print('this is the main function')
 
@@ -141,9 +212,9 @@ def func():
 func = decorator(func)
 func()
 
+
+
 from functools import wraps
-
-
 def decorator(fun):
     @wraps(fun)
     def inner():
@@ -152,13 +223,54 @@ def decorator(fun):
         print('after main function')
 
     return inner
-
-
 @decorator
 def func():
     print('this is the main function')
-
-
 func()
+
+"""
+We can change the functionality of existing function.
+"""
+
+def divi(a,b):
+    print("After division : ", a/b)
+
+
+def smart(fun):
+    def inner(a,b):
+        if a < b:
+         a,b = b,a
+         return fun(a,b)
+    return inner
+
+divi = smart(divi)
+
+divi(3,7)
+
+
+
+
+
+
+@smart
+def divi(a,b):
+    print("After division : ", a/b)
+
+
+def smart(fun):
+
+    def inner(a,b):
+        if a< b:
+            a,b =b,
+            return fun(a,b)
+
+    return inner
+
+
+divi(2,3)
+
+
+
+
 
 
