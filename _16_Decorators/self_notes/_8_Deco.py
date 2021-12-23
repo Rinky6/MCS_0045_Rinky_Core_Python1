@@ -138,7 +138,7 @@ def execution(fun):
     return execution1
 def execu():
     print("main execution")
-execu= execution(execu)
+execu = execution(execu)
 execu()
 
 
