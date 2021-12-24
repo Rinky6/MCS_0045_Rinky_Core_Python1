@@ -142,7 +142,17 @@ execu = execution(execu)
 execu()
 
 
+def execution(fun):
+    def execution1():
+        print("Execution going on...")
+        fun()
+        print("After fun() execution")
+    return execution1
 
+@execution
+def execu():
+    print("main execution")
+execu()
 
 
 
@@ -265,8 +275,6 @@ def smart(fun):
             return fun(a,b)
 
     return inner
-
-
 divi(2,3)
 
 
