@@ -177,6 +177,32 @@ print(newList)
 
 
 
+
+obj = ["Even" if i%2==0 else "Odd" for i in range(10)]
+print(obj)
+
+
+matrix = [[1, 2], [3,4], [5,6], [7,8]]
+transpose = [[row[i] for row in matrix] for i in range(2)]
+print (transpose)
+
+#Cross Product
+
+lst = [(x, y) for x in [1,2,3] for y in [3,1,4] ]
+print(lst)
+
+
+
+
+
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q, a in zip(questions, answers):
+ print('What is your {0}?  It is {1}.'.format(q, a))
+
+
+
+
 '''
 Key Points
 Comprehension of the list is an effective means of describing and constructing lists based on

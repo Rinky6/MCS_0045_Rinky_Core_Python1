@@ -6,10 +6,10 @@ module throws an exception if there is some error while using the regular expres
 The re module must be imported to use the regex functionalities in python.
 
 """
-
+'''
 import re
 
-'''
+
 Regex Functions
 The following regex functions are used in the python.
 
@@ -77,21 +77,20 @@ the order they are found. If there are no matches, then an empty list is returne
 Consider the following example.
 
 Example
-'''
+
 str_1 = "How are you. How is everything"
 
 matches = re.findall("How", str_1)
 
 print(matches)
 
-'''
+
 The match object
 The match object contains the information about the search and the output. 
 If there is no match found, the None object is returned.
 
 
 Example
-'''
 print("-------------------------------------------------------------------------------------------")
 
 str_2 = "How are you. How is everything"
@@ -102,7 +101,7 @@ print(type(matches))
 
 print(matches)  # matches is the search object
 
-'''
+
 The Match object methods
 There are the following methods associated with the Match object.
 
@@ -110,7 +109,6 @@ span(): It returns the tuple containing the starting and end position of the mat
 string(): It returns a string passed into the function.
 group(): The part of the string is returned where the match is found.
 
-'''
 print("-------------------------------------------------------------------------")
 
 str_3 = "How are you. How is everything"
@@ -124,7 +122,7 @@ print(matches.string)
 print(matches.group())
 
 print("-------------------------------------------------------------------------------------")
-'''
+
 We usegroup(num) or groups() function of match object to get matched expression.
 
 Sr.No.	Match Object Method & Description
@@ -137,7 +135,6 @@ Sr.No.	Match Object Method & Description
         This method returns all matching subgroups in a tuple (empty if there weren't any)
 
 Example
-'''
 line = "Cats are smarter than dogs"
 
 matchObj = re.match(r'(.*) are (.*?) .*', line, re.M | re.I)
@@ -167,7 +164,7 @@ p = re.compile('[a-e]')
 # and return a list upon finding
 print(p.findall("Aye, said Mr. Gibenson  Stark"))
 
-'''
+
 Output: 
 
 ['e', 'a', 'd', 'b', 'e', 'a']
@@ -178,7 +175,7 @@ Next Occurrence is ‘a’ in “said”, then ‘d’ in “said”, followed b
   “Stark”.
 Metacharacter backslash ‘\’ has a very important role as it signals various sequences. If the backslash is to be used 
 without its special meaning as metacharacter, use’\\’
-'''
+
 
 print("-------------------------------------------------------------------------")
 
@@ -211,7 +208,7 @@ print(re.split('\d+', 'On 12th Jan 2016, at 11:02 AM', 1))
 print(re.split('[a-f]+', 'Aey, Boy oh boy, come here', flags=re.IGNORECASE))
 print(re.split('[a-f]+', 'Aey, Boy oh boy, come here'))
 
-'''
+
 re.sub() 
 The ‘sub’ in the function stands for SubString, a certain regular expression pattern is searched in the given 
 string(3rd parameter), and upon finding the substring pattern is replaced by repl(2nd parameter), count checks and 
@@ -221,7 +218,7 @@ Syntax:
 
  re.sub(pattern, repl, string, count=0, flags=0)
 Example 1:
-'''
+
 import re
 
 # Regular Expression pattern 'ub' matches the
@@ -247,7 +244,7 @@ print(re.sub('ub', '~*', 'Subject has Uber booked already',
 print(re.sub(r'\sAND\s', ' & ', 'Baked Beans And Spam',
              flags=re.IGNORECASE))
 
-'''
+
 re.subn() 
 subn() is similar to sub() in all ways, except in its way to providing output. It returns a tuple with count of total of
 replacement and the new string rather than just the string. 
@@ -256,7 +253,7 @@ Syntax:
 
  re.subn(pattern, repl, string, count=0, flags=0)
 Example:
-'''
+
 
 print(re.subn('ub', '~*', 'Subject has Uber booked already'))
 
@@ -268,7 +265,7 @@ print(len(t))
 # This will give same output as sub() would have
 print(t[0])
 
-'''
+
 re.escape()
 Return string with all non-alphanumerics backslashed, this is useful if you want to match an arbitrary literal string 
 that may have regular expression metacharacters in it.
@@ -277,7 +274,7 @@ Syntax:
 
 re.escape(string)
 Example:
-'''
+
 print("--------------------------------------------------------------------------------------")
 # escape() returns a string with BackSlash '\',
 # before every Non-Alphanumeric Character
@@ -287,14 +284,14 @@ print("-------------------------------------------------------------------------
 print(re.escape("This is Awesome even 1 AM"))
 print(re.escape("I Asked what is this [a-9], he said \t ^WoW"))
 
-'''
+
 re.search()
 his method either returns None (if the pattern doesn’t match), or a re.MatchObject contains information about the 
 matching part of the string. This method stops after the first match, so this is best suited for testing a regular 
 expression more than extracting data.
 
 Example: Searching an occurrence of the pattern
-'''
+
 # A Python program to demonstrate working of re.match().
 import re
 
@@ -334,7 +331,7 @@ else:
     print("The regex pattern does not match.")
 
 
-'''
+
 Match Object
 A Match object contains all the information about the search and the result and if there is no match found then None 
 will be returned. Let’s see some of the commonly used methods and attributes of the match object.
@@ -343,7 +340,6 @@ Getting the string and the regex
 math.re attribute returns the regular expression passed and match.string attribute returns the string passed.
 
 Example: Getting the string and the regex of the matched object
-'''
 
 print("-------------------------------------------------------------------------------")
 s = "Welcome to Good For Goods"
@@ -354,13 +350,12 @@ res = re.search(r"\bG", s)
 print(res.re)
 print(res.string)
 
-'''
+
 Getting index of matched object
 start() method returns the starting index of the matched substring
 end() method returns the ending index of the matched substring
 span() method returns a tuple containing the starting and the ending index of the matched substring
 Example: Getting index of matched object 
-'''
 
 print("------------------------------------------------------------")
 s = "Welcome to Getting index of matched object "
@@ -372,12 +367,10 @@ print(res.start())
 print(res.end())
 print(res.span())
 
-'''
 Getting matched substring
 group() method returns the part of the string for which the patterns match. See the below example for a better 
 understanding.
 Example: Getting matched substring 
-'''
 
 print("----------------------------------------------------------------------------------")
 s = "Welcome to Getting matched"
@@ -386,5 +379,122 @@ s = "Welcome to Getting matched"
 res = re.search(r"\D{2} t", s)
 
 print(res.group())
+
+'''
+
+
+"""
+RegEx Functions
+
+Function	Description
+findall	    Returns a list containing all matches
+search	    Returns a Match object if there is a match anywhere in the string
+split	    Returns a list where the string has been split at each match
+
+sub	Replaces one or many matches with a string
+
+
+
+The Match object has properties and methods used to retrieve information about the search, and the result:
+
+.span() returns a tuple containing the start-, and end positions of the match.
+.string returns the string passed into the function
+.group() returns the part of the string where there was a match
+"""
+
+import re
+
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
+
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.findall("Portugal", txt)
+print(x)
+
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.search("\s", txt)
+
+print("The first white-space character is located in position:", x.start())
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.split("\s", txt)
+print(x)
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.split("\s", txt, 1)
+print(x)
+
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt)
+print(x)
+
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.sub("\s", "9", txt, 2)
+print(x)
+
+import re
+
+txt = "The rain in Spain"
+x = re.search("ai", txt)
+print(x) #this will print an object
+
+
+import re
+m = re.search('(?<=ab)cdef', 'abcdef')
+print("simple pattern " ,m.group(0))  #cdef
+
+m = re.search('(?<=ab)\w+', 'abcdef')
+print(" pattern matching ", m.group(0))
+
+m = re.search(r'(?<=-)\w+', 'spam-abc')
+print(m.group(0))
+
+m = re.search(r'(?<=-)\w+', 'spam-egg')
+print(m.group(0))
+
+
+
+
+import re
+
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+print("print", x)   #<re.Match object; span=(0, 17), match='The rain in Spain'>
+
+
+
+
+def dashrepl(matchobj):
+   if matchobj.group(0) == '-': return ' '
+   else: return '-'
+re.sub('-{1,2}', dashrepl, 'pro----gram-files')
+#'pro--gram files'
+re.sub(r'\sAND\s', ' & ', 'Baked Beans And Spam', flags=re.IGNORECASE)
+
+
 
 
