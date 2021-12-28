@@ -401,7 +401,7 @@ The Match object has properties and methods used to retrieve information about t
 .string returns the string passed into the function
 .group() returns the part of the string where there was a match
 """
-
+"""
 import re
 
 txt = "The rain in Spain"
@@ -483,18 +483,254 @@ import re
 
 txt = "The rain in Spain"
 x = re.search("^The.*Spain$", txt)
-print("print", x)   #<re.Match object; span=(0, 17), match='The rain in Spain'>
+#print("print", x)   #<re.Match object; span=(0, 17), match='The rain in Spain'>
+
+"""
+
+import re
+
+s = 'A computer science portal for geeks'
+
+match = re.search('science', s)
+
+print('Start Index:', match.start())    #Start Index: 11
+print('End Index:', match.end())  #End Index: 18
+
+
+#The above code gives the starting index and the ending index of the string portal.
+
+import re
+s = 'rinky.kumari'
+match = re.search(r'.', s)
+print("without Backslash " ,match)   #<re.Match object; span=(0, 1), match='r'>
+
+match = re.search(r'\.', s)
+print("with Backslash", match)   #<re.Match object; span=(5, 6), match='.'>
+
+"""
+re.findall()
+Return all non-overlapping matches of pattern in string, as a list of strings. 
+The string is scanned left-to-right, and matches are returned in the order found.
+
+"""
+
+#Example: Finding all occurrences of a pattern
+
+
+import re
+
+# A sample text string where regular expression
+# is searched.
+string = """Hello my Number is 123456789 and
+            my45478822 friend's number is 987654321"""
+
+# A sample regular expression to find digits.
+regex = '\d+'  # printing decimal no.
+
+match = re.findall(regex, string)   #['123456789', '45478822', '987654321']
+print(match)
+
+import re
+
+# A sample text string where regular expression
+# is searched.
+string = """Hello my Number is 123456789 and
+            my friend's number is 987654321"""
+
+# A sample regular expression to find digits.
+regex = '\w+'
+
+match = re.findall(regex, string)
+print(match)   #['Hello', 'my', 'Number', 'is', '123456789', 'and', 'my', 'friend', 's', 'number', 'is', '987654321']
+
+
+
+"""
+re.compile() 
+============
+Regular expressions are compiled into pattern objects, which have methods for various 
+operations such as searching for pattern matches or performing string substitutions. 
+"""
+
+
+import re
+strg= """Grab Holdings Inc., commonly known as Grab, is a +91 8596588542 Southeast Asian technology company
+     headquartered in Singapore and Indonesia. In addition to transportation, the company offers
+        food delivery and digital payments services via a mobileeeeeeeeeee mobile"""
+
+pttr = re.compile(r'Grab')
+print("after matching " , pttr.findall(strg))
+
+pttr = re.compile(r'.es')
+print("after matching 1 " , pttr.finditer(strg))
+matches = pttr.finditer(strg)
+for match in matches:
+    print("using finditer method: ", match)
+
+#pttr = re.compile(r'.')
+#print("after matching 1 " , pttr.findall(strg))
+
+pttr = re.compile(r'co+')
+print("after matching 2 " , pttr.findall(strg)) #['co', 'co', 'co']
+
+
+pttr = re.compile(r'co*')
+print("after matching 2 " , pttr.findall(strg)) # ['c', 'co', 'c', 'co', 'co', 'c']
+
+
+pttr = re.compile(r'^Grab')
+print("after matching 2 " , pttr.findall(strg)) #['Grab']
+
+pttr = re.compile(r'ile$')
+print("after matching 3 " , pttr.findall(strg)) #after matching 3  ['ile']
+
+pttr = re.compile(r'ile{2}')
+print("after matching 4 " , pttr.findall(strg))   #after matching 4  ['ilee']
+
+
+
+pttr = re.compile(r'ile{1}|Grab')
+print("after matching 5 " , pttr.findall(strg))  # ['Grab', 'Grab', 'ile', 'ile']
+
+
+pttr = re.compile(r'\AGrab')
+print("after matching 6 " , pttr.findall(strg)) #['Grab']
+
+pttr = re.compile(r'\bGrab')
+print("after matching 6 " , pttr.findall(strg)) #['Grab', 'Grab']
+
+
+pttr = re.compile(r'Grab\b')
+print("after matching 6 " , pttr.findall(strg)) #['Grab', 'Grab']
+
+
+pttr = re.compile(r'\BGrab')
+print("after matching 6 " , pttr.findall(strg))
+
+patt=re.compile(r'.+91 \d{10}')
+matches=patt.finditer(strg)
+for match in matches:
+    print("matching ....." ,match)
+
+p = re.compile('[a-e]')
+print(p.findall("Aye, said Mr. Gibenson Stark"))  #  ['e', 'a', 'd', 'b', 'e', 'a']
+
+
+
+# \d is equivalent to [0-9].
+p = re.compile('\d')
+print(p.findall("I went to him at 11 A.M. on 4th July 1886"))  #['1', '1', '4', '1', '8', '8', '6']
+
+# \d+ will match a group on [0-9], group
+# of one or greater size
+p = re.compile('\d+')  #
+print(p.findall("I went to him at 11 A.M. on 4th July 1886"))  #['11', '4', '1886']
+
+"""
+\w , \w+  , \W
+"""
+
+# \w is equivalent to [a-zA-Z0-9_].
+p = re.compile('\w')
+print(p.findall("He said * in some_lang."))
+#['H', 'e', 's', 'a', 'i', 'd', '_', 'i', 'n', 's', 'o', 'm', 'e', '_', 'l', 'a', 'n', 'g']
+# \w+ matches to group of alphanumeric character.
+p = re.compile('\w+')
+print(p.findall("I went to him at 11 A.M., he \
+said *** in some_language."))
+#['I', 'went', 'to', 'him', 'at', '11', 'A', 'M', 'he', 'said', 'in', 'some_language']
+
+# \W matches to non alphanumeric characters.
+p = re.compile('\W')
+print(p.findall("he said *** in some_language."))
+#[' ', ' ', '*', '*', '*', ' ', ' ', '.']
+
+
+# '*' replaces the no. of occurrence
+# of a character.
+p = re.compile('ab*')
+print(p.findall("ababbaabbbcccbbbabbbaaab"))
+
+#['ab', 'abb', 'a', 'abbb', 'abbb', 'a', 'a', 'ab']
+
+
+
+"""
+re.split() 
+Split string by the occurrences of a character or a pattern, upon finding that pattern, 
+the remaining characters from the string are returned as part of the resulting list. 
+
+Syntax : 
+
+re.split(pattern, string, maxsplit=0, flags=0)
+
+"""
+
+from re import split
+
+# '\W+' denotes Non-Alphanumeric Characters
+# or group of characters Upon finding ','
+# or whitespace ' ', the split(), splits the
+# string from that point
+print(split('\W+', 'Words, words , Words'))   #['Words', 'words', 'Words']
+print(split('\W+', "Word's words Words"))  #['Word', 's', 'words', 'Words']
+
+# Here ':', ' ' ,',' are not AlphaNumeric thus,
+# the point where splitting occurs
+print(split('\W+', 'On 12th Jan 2016, at 11:02 AM')) #['On', '12th', 'Jan', '2016', 'at', '11', '02', 'AM']
+
+# '\d+' denotes Numeric Characters or group of
+# characters Splitting occurs at '12', '2016',
+# '11', '02' only
+print(split('\d+', 'On 12th Jan 2016, at 11:02 AM')) #['On ', 'th Jan ', ', at ', ':', ' AM']
+
+import re
+
+# Splitting will occurs only once, at
+# '12', returned list will have length 2
+print(re.split('\d+', 'On 12th Jan 2016, at 11:02 AM', 1))
+
+# 'Boy' and 'boy' will be treated same when
+# flags = re.IGNORECASE
+print(re.split('[a-f]+', 'Aey, Boy oh boy, come here', flags=re.IGNORECASE))
+print(re.split('[a-f]+', 'Aey, Boy oh boy, come here'))
 
 
 
 
-def dashrepl(matchobj):
-   if matchobj.group(0) == '-': return ' '
-   else: return '-'
-re.sub('-{1,2}', dashrepl, 'pro----gram-files')
-#'pro--gram files'
-re.sub(r'\sAND\s', ' & ', 'Baked Beans And Spam', flags=re.IGNORECASE)
+
+"""
+re.sub() 
+The ‘sub’ in the function stands for SubString, a certain regular expression pattern is searched 
+in the given string(3rd parameter), and upon finding the substring pattern is replaced by
+ repl(2nd parameter), count checks and maintains the number of times this occurs. 
+ re.sub(pattern, repl, string, count=0, flags=0)
+"""
 
 
+import re
+
+# Regular Expression pattern 'ub' matches the
+# string at "Subject" and "Uber". As the CASE
+# has been ignored, using Flag, 'ub' should
+# match twice with the string Upon matching,
+# 'ub' is replaced by '~*' in "Subject", and
+# in "Uber", 'Ub' is replaced.
+print(re.sub('ub', '~*', 'Subject has Uber booked already',
+			flags=re.IGNORECASE))
+
+# Consider the Case Sensitivity, 'Ub' in
+# "Uber", will not be reaplced.
+print(re.sub('ub', '~*', 'Subject has Uber booked already'))
+
+# As count has been given value 1, the maximum
+# times replacement occurs is 1
+print(re.sub('ub', '~*', 'Subject has Uber booked already',
+			count=1, flags=re.IGNORECASE))
+
+# 'r' before the pattern denotes RE, \s is for
+# start and end of a String.
+print(re.sub(r'\sAND\s', ' & ', 'Baked Beans And Spam',
+			flags=re.IGNORECASE))
 
 
