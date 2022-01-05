@@ -264,18 +264,26 @@ divi(3,7)
 
 @smart
 def divi(a,b):
-    print("After division : ", a/b)
+    print("After division  1: ", a/b)
 
 
 def smart(fun):
 
     def inner(a,b):
         if a< b:
-            a,b =b,
+            a,b =b,a
+            print("--------------")
             return fun(a,b)
 
     return inner
-divi(2,3)
+divi(3,2)
+
+
+
+
+
+
+
 
 
 
