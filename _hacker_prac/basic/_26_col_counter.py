@@ -8,16 +8,23 @@ if they get the shoe of their desired size.
 
 Your task is to compute how much money Raghu earned.
 
-"""
+
 from collections import Counter
 numShoes = int(input("Entet shoes no : "))
 shoes = Counter(map(int, input("count the no of shoe").split()))
+print(shoes)
 numCust = int(input("enter total no of customer"))
 income = 0
 for i in range(numCust):
      size = map(int, input("enter size of shoes").split())
+     print(size)
      price = map(int, input("price of shoes").split())
-     if shoes[size]:
-        income += price
-        shoes[size] -= 1
+     print(price)
+     income += price
+     shoes[size] -= 1
+
+ #if shoes[size]:
+
 print("Total income : ",income)
+
+"""
