@@ -7,6 +7,52 @@ return terminate the function but yield not
 
 
 """
+def gen(n):
+
+    for i in n:
+        for j in i:
+           yield j
+
+
+a = gen([[1,2,3]])
+
+for i in range(2):
+    print(next(a))
+
+"""
+1
+2
+"""
+
+
+
+def gen(n):
+
+    for i in n:
+        yield from i
+
+
+a = gen([[1,2,3]])
+
+for i in range(2):
+    print(next(a))
+
+"""
+
+1
+2
+"""
+
+
+
+
+
+
+
+
+
+
+
 def gen():
 
     return 5
