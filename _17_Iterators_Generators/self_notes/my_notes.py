@@ -1,6 +1,6 @@
 """
-iterable -----> __iter__ or __getitem__
-iterator ------> __next__
+iterable -----> __iter__ or __getitem__,
+iterator ------> __next__ , Whenever there is no element it returns StopIteration Exception
 iteration -----> process of iterator
 
 return terminate the function but yield not

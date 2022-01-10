@@ -163,7 +163,7 @@ except StopIteration as si:
 iter_obj = iter(iterable)            # create an iterator object from that iterable
 
 while True:                          # infinite loop
-    try:
+        try:
         # get the next item
         element = next(iter_obj)
         # do something with element
