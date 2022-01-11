@@ -6,7 +6,7 @@ iteration -----> process of iterator
 return terminate the function but yield not
 
 
-"""
+
 def gen(n):
 
     for i in n:
@@ -175,3 +175,29 @@ print(next(obj))
 print(next(obj))
 print(next(obj))
 
+"""
+
+# send() in generator
+def prac():
+    rs = yield
+    yield rs
+
+
+
+
+rst = prac()
+
+print(next(rst))   #None
+
+print(rst.send('Rinky'))
+
+
+"""
+In this program the first execution start from prac()  thn control goes to def prac() 
+enter in the function its return generator object after that it's come to a print(next(rst))
+and control goes to fun and after that is goes to the next line where when it found yield it pause the execution 
+and then its print the None because there yield contain now None. after that we send a any data which one yield
+contain and print the data whatever we send.
+
+
+"""

@@ -42,6 +42,10 @@ a.extend([5,9,8])
 print(a)
 
 
+#insert(): Inserts an elements at specified position.
+a.insert(2,9)
+print(a)
+
 
 
 
