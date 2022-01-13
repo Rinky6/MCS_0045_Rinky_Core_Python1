@@ -1,3 +1,32 @@
+"""
+% ---->>>	Format - Performs String formatting
+
+
+Format Symbol	    Conversion
+=============      ===========
+%c	                character
+%s	                string conversion via str() prior to formatting
+%i                  signed decimal integer
+%d	                signed decimal integer
+%u	                unsigned decimal integer
+%o	                octal integer
+%x	                hexadecimal integer (lowercase letters)
+%X	                hexadecimal integer (UPPERcase letters)
+%e                 	exponential notation (with lowercase 'e')
+%E	                exponential notation (with UPPERcase 'E')
+
+
+
+"""
+
+print("my name is %s and my height %d : " %("rinky" , 7))   #my name is rinky and my height 7 :
+
+
+
+
+
+
+
 
 #String method
 #capitalize(): it doesn't take parameter ,it simply convert a first character in capital
@@ -37,11 +66,46 @@ space is take as default argument. for fillchar we can give any character like %
 """
 
 print("\n --------------")
-string = "hii"
+string = "hi"
 
 print(string.center(15,"*")) #******hii******
 
 print(string.center(15)) #     hii
+
+print(string.center(10 , "-"))
+
+
+#print(string.center(10 , "-_"))
+
+#print(string.center(15,"**"))
+
+"""
+we can use only one fillchar if we use more than that it through error
+
+    print(string.center(15,"**"))
+TypeError: The fill character must be exactly one character long
+"""
+
+"""
+If length of the string is greater that width then string return without padding.
+"""
+
+
+string  = "Im learning python"
+print(string.center(5,"*"))    #Im learning python
+
+
+"""
+The center() through an TypeError whenever we ddint provide width:
+"""
+
+string = "Rinky"
+print(string.center())   #TypeError: center expected at least 1 argument, got 0
+
+
+
+
+
 
 
 
