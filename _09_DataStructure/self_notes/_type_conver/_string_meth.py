@@ -100,7 +100,48 @@ The center() through an TypeError whenever we ddint provide width:
 """
 
 string = "Rinky"
-print(string.center())   #TypeError: center expected at least 1 argument, got 0
+#print(string.center())   #TypeError: center expected at least 1 argument, got 0
+
+
+"""
+count() --> count() use for the count the character of string it is take 3 argument as parameter where
+1st is substring remaining two is optional 1st one is start point of substring and 2nd end of string till what
+we want to count.
+"""
+
+string = "hello what world what are you what doing"
+print(string.count("what" , 9, 11)) #0
+#Here I give the starting index, which is more than the lenth of the string.
+# it don't give any error. it just return 0. any index out of the range is considered as
+# the end of the string.
+
+print(string.count("what")) #3
+#here the the result is 3, because 'what' repeated 3 times
+print(string.count("what" ,9)) #1
+#start and end index are optional, so I can give just start point
+
+print(string.count("")) #36
+#I search for empty string. this retuns 15, even though the length of the string is 14.
+# the reason is empty string means nothing, not even a single space. So in the string
+# "this is python", it evaluates as starting from double quotes, there is nothing between
+# double quotes and first character t. So it counts as 1, next checks between t and h.
+# again nothing between them, counts 2. so it contiues and count reaches 15.
+# simply if we serach for single space ' '. it search for spaces.  if you search for
+# empty string '', it assumes no space and counts if there is no space between characters
+# in the string. or you can it search for non-space.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
