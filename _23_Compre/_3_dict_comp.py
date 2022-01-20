@@ -43,3 +43,24 @@ print(data)
 
 
 
+
+lst = ["one","two", "three"]
+lst1 = [1,2,3]
+
+# res={lst[i]:lst1[i] for i in range(len(lst))}
+
+lst3=['angry','apple','bucket','ball']
+
+
+for i in range(len(lst)):
+        pass
+
+
+#p=[{'a':['apple','angry'],'b' : ['bucket' , 'ball']}]
+#print(p)
+
+# from itertools import groupby
+#
+# res=[[word for word in words] for le,words in groupby(lst3)]
+#
+# print(list(res))
