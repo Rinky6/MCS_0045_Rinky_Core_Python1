@@ -80,13 +80,13 @@ whereas resize()we can change the element of array
 """
 
 
-rs = np.arange(6)
+rs = np.arange(5)
 
-print(np.resize(rs,(2,3)))
+print(np.resize(rs,(4,4)))
 
 """
-[[0 1 2]
- [3 4 0]]
+[[0 1 2 3]
+ [4 0 1 2]]
 """
 
 #here we create  2x3 array its fill all elements of array once it completed it take again

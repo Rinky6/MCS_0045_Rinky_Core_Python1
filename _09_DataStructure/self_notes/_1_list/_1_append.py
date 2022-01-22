@@ -20,7 +20,7 @@ print(a) #[1, 5, 8, 4, 3, 5, 5]
 
 import collections
 from array import *
-arr_lst = array('H', [4,5,2,8,7])   #ValueError: bad typecode (must be b, B, u, h, H, i, I, l, L, q, Q, f or d)
+arr_lst = array('m', [4,5,2,8,7])   #ValueError: bad typecode (must be b, B, u, h, H, i, I, l, L, q, Q, f or d)
 i = 0
 print(len(arr_lst)) #5
 n = len(arr_lst)
