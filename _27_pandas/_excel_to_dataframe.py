@@ -10,4 +10,4 @@ def solution():
 
     return sum(rst) / len(rst)
 avg = solution()
-print("Average of marks : ",avg)
+print("Average of marks : ", avg)
