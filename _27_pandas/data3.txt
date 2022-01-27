@@ -1,0 +1,4 @@
+Name Sub Marks
+Rinky Math 100
+Suma Phy 95
+Satish Chem 75
