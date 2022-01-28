@@ -8,7 +8,3 @@ for i in range(len(string)):
 
 
 
-
-now new you can use knife     zebra
-
-  new now you zebra
